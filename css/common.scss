@@ -1,0 +1,15 @@
+@charset "UTF-8";
+//コンパイルscss//
+@import "reset"; //ブラウザのデフォルトcssの打ち消し用
+@import "variable"; //色やブレークポイントの変数化
+@import "mixin"; //メディアクエリやflexの並び
+@import "base"; //基本のcssや共通パーツの作成
+@import "header"; //ヘッダー
+@import "footer"; //フッター
+@import "front"; //トップページ
+@import "news"; //トップページ
+/*
+* 案件担当者以外が記述する場合はなるべく此処に記述してください。
+* コーディング終了後修正記述用のscssファイルです。
+* このimportしたファイル以下に記述しないでください。
+*/

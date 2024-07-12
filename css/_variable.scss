@@ -1,0 +1,46 @@
+//色設定
+$color1: #ffffff;
+$color2: #000000;
+$color3: #B40F0F;
+$color4: #2176BF;
+$color5: #EFF7FF;
+$color6: #FF89AD;
+$color7: #FFEBEE;
+$color8: #FFE562;
+$color9: #FFFDEB;
+$color10: #69B90C;
+$color11: #DCF0C4;
+$color12: #FFF9E2;
+
+
+//break point
+$break-point_xl: 1200px;
+$break-point_lg: 1024px;
+$break-point-md: 768px;
+$break-point-sp: 540px;
+$break-point-xs: 375px;
+
+// @include xl { (1200px) } PCの最小
+// @include lg { (1024px) } タブレット横
+// @include md { (768px) }　タブレット縦
+// @include sm { (767px) }　タブレット-スマホ
+// @include sp { (540px) }　スマホ-iPhoneX
+// @include xs { (375px) }　スマホ-iPhone5/6
+
+
+.text{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+}
+.Rounded-medium{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 500;
+}
+.Rounded-bold{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 700;
+}
+.Rounded-extrabold{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 800;
+}

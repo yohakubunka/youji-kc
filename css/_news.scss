@@ -1,0 +1,375 @@
+
+// 下層ページメインビジュアル
+.undervisual{
+  max-width: 100%;
+  width: 100%;
+  padding-top: 152px;
+  @include md {
+    padding-top: 88px;
+  }
+  &__inner{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 120px 16px 60px 16px;
+    @include md {
+      padding: 80px 16px 40px 16px;
+    }
+    img{
+      max-width: 100%;
+      width: 100%;
+    }
+    .page-title{
+      font-size: 4.8rem;
+      text-align: center;
+      padding: 40px 0;
+      @include md {
+        padding: 24px 0;
+      }
+    }
+    
+  }
+}
+// コースとは
+.explanation{
+  @include sp {
+    .title-box{
+      &::before {
+        top: 16px;
+      }
+      &.rabbit{
+        &::after{
+          top: 16px;
+        }
+      }
+    }
+  }
+  max-width: 100%;
+  width: 100%;
+  padding: 64px;
+  @include lg{
+    padding: 40px;
+  }
+  @include lg{
+    padding: 24px;
+  }
+  &__inner{
+    width: 100%;
+    position: relative;
+    @include lg {
+      padding-top: 80px;
+    }
+    &::after,
+    &::before{
+      content: "";
+      max-width: 112px;
+      width: 100%;
+      height: 64px;
+      position: absolute;
+      top: 0;
+    }
+    &::after{
+      left: 0;
+      background-image: url(../images/svg/flag-left.svg);
+    }
+    &::before{
+      right: 0;
+      background-image: url(../images/svg/flag-right.svg);
+    }
+    .item{
+      &__title{
+        height: 64px;
+        padding: 0 40px;
+        @include flex(start,center);
+        @include sm{
+          height: auto;
+          padding: 16px;
+        }
+      }
+      &__text{
+        margin: 16px 0px 40px 40px;
+        position: relative;
+        @include lg{
+          margin: 16px 24px 24px 24px;
+          padding-bottom: 72px;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          width: 100%;
+          right: 0;
+          top: 0;
+          background-repeat: no-repeat;
+          @include lg{
+            top: auto;
+            bottom: 0;
+            background-size: contain;
+          }
+        }
+        p{
+          max-width: calc(100% - 170px);
+          margin: 0 auto 0 0;
+          @include lg{
+            max-width: 100%;
+          }
+        }
+      }
+      &:first-child{
+        .item__text{
+          &::after{
+            max-width: 56px;
+            width: 100%;
+            height: 80px;
+            background-image: url(../images/svg/wood.svg);
+            top: auto;
+            bottom: 0;
+            @include lg{
+              max-width: 48px;
+              height: 64px;
+            }
+          }
+        }
+      }
+      &:nth-child(2){
+        .item__text{
+          &::after{
+            max-width: 64px;
+            width: 100%;
+            height: 85px;
+            background-image: url(../images/svg/koala.svg);
+            top: auto;
+            bottom: 0;
+            @include lg{
+              max-width: 48px;
+              height: 64px;
+            }
+          }
+        }
+      }
+      &:nth-child(3){
+        .item__text{
+          &::after{
+            max-width: 30px;
+            width: 100%;
+            height: 52px;
+            background-image: url(../images/svg/balloon.svg);
+            @include lg{
+              max-width: 40px;
+              height: 64px;
+            }
+          }
+        }
+      }
+      &:nth-child(4){
+        .item__text{
+          &::after{
+            max-width: 85px;
+            width: 100%;
+            height: 116px;
+            background-image: url(../images/svg/wood2.svg);
+            @include lg{
+              max-width: 48px;
+              height: 64px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.about{
+  max-width: 100%;
+  width: 100%;
+  &__title{
+    max-width: 100%;
+    width: 100%;
+    height: 160px;
+    @include flex(center,center);
+  }
+  &__inner{
+    max-width: 100%;
+    width: 100%;
+    padding: 64px;
+    border: 8px solid;
+    border-top: none;
+    @include lg{
+      padding: 40px;
+    }
+    @include lg{
+      padding: 24px;
+    }
+    .item{
+      margin-bottom: 40px;
+      @include flex(start);
+      @include sm{
+        @include flex(start,start,0,0,1)
+      }
+      &__title{
+        max-width: 300px;
+        width: 100%;
+        padding: 0 40px;
+        @include flex(start,center);
+        @include sm{
+          max-width: 100%;
+          padding: 16px;
+        }
+        span{
+          padding-right: 24px;
+        }
+      }
+      &__text{
+        max-width: 100%;
+        width: 100%;
+        padding: 40px;
+        @include sm{
+          padding: 24px;
+        }
+      }
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+    &--openings{
+      max-width: 100%;
+      width: 100%;
+      padding: 40px;
+      background: $color1;
+      p{
+        text-align: center;
+        font-size: 1.6rem;
+      }
+    }
+    &--image{
+      max-width: 100%;
+      width: 100%;
+      padding-bottom: 40px;
+      &:last-of-type{
+        padding-bottom: 0;
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 入学準備コース
+.undervisual__inner.provision{
+  .page-title{
+    background-color: $color8;
+  }
+}
+#provision{
+  .explanation{
+    border: 8px solid $color8;
+    background: $color9;
+    &__inner{
+      .item{
+        &__title{
+          background: $color8;
+        }
+      }
+    }
+  }
+  .about{
+    &__title{
+      background: $color8;
+      h2{
+        position: relative;
+        padding: 0 50px;
+        &::after,
+        &::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          background-repeat: no-repeat;
+        }
+        &::after{
+          width: 34px;
+          height: 64px;
+          background-image: url(../images/svg/title-left.svg);
+          left: 0;
+        }
+        &::before{
+          width: 50px;
+          height: 72px;
+          background-image: url(../images/svg/title-right.svg);
+          right: 0;
+        }
+      }
+    }
+    &__inner{
+      border-color: $color8;
+      background: $color9;
+      .item{
+        &__title{
+          background: $color8;
+
+        }
+        &__text{
+          background: $color1;
+        }
+      }
+    }
+  }
+}
+// 小学生コース
+.undervisual__inner.elementaryschool{
+  .page-title{
+    background-color: $color10;
+  }
+}
+#elementaryschool{
+  .explanation{
+    border: 8px solid $color10;
+    background: $color11;
+    &__inner{
+      .item{
+        &__title{
+          background: $color10;
+        }
+      }
+    }
+  }
+  .about{
+    &__title{
+      background: $color10;
+      h2{
+        position: relative;
+        padding: 0 50px;
+        &::after,
+        &::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          background-repeat: no-repeat;
+        }
+        &::after{
+          width: 34px;
+          height: 64px;
+          background-image: url(../images/svg/title-left2.svg);
+          left: 0;
+        }
+        &::before{
+          width: 50px;
+          height: 72px;
+          background-image: url(../images/svg/title-right.svg);
+          right: 0;
+        }
+      }
+    }
+    &__inner{
+      border-color: $color10;
+      background: $color11;
+      .item{
+        &__title{
+          background: $color10;
+
+        }
+        &__text{
+          background: $color1;
+        }
+      }
+    }
+  }
+}

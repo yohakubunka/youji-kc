@@ -1,0 +1,328 @@
+html{
+  font-size: 10px!important;
+}
+img{
+  max-width: 100%;
+}
+body{
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  color: $color2;
+  @extend .text;
+}
+// 改行制御
+br.pc-only{
+  @include sp {
+    display: none;
+  }
+}
+br.sp-only{
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
+// セクション関係
+.section{
+  max-width: 100%;
+  width: 100%;
+  padding-top: 120px;
+  @include lg {
+    padding: 60px 40px;
+	}
+  @include md {
+    padding: 40px 24px;
+  }
+  @include sp {
+    padding: 40px 16px;
+  }
+ &__inner{
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+ }
+}
+// タイトル関係
+.title-box {
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  width: fit-content;
+  margin-bottom: 56px;
+  &::before {
+    width: 120px;
+    height: 110px;
+  }
+  &::after {
+    width: 120px;
+    height: 110px;
+  }
+  @include md {
+    margin-bottom: 40px;
+    height: 80px;
+    &::before {
+      width: 80px;
+      height: 88px;
+    }
+    &::after {
+      width: 80px;
+      height: 88px;
+    }    
+  }
+  //タイトル　ぞう（共通）
+    &::before {
+      content: "";
+      background: url(../images/svg/elephant.svg) no-repeat center;
+      background-size: contain;
+      position: absolute;
+      top: -16px;
+      left: 0;
+      transform:translateX(-50%);
+      -webkit-transform: translateX(-50%);
+     
+    }
+    //保護者の声タイトル　ウサギアイコン
+    &.rabbit{
+      &::after{
+        content: "";
+        background: url(../images/svg/rabbit.svg) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: -16px;
+        right: 0;
+        transform:translateX(50%);
+        -webkit-transform: translateX(50%);
+      
+      }
+    }
+     //基本理念タイトル　ライオンアイコン
+     &.lion{
+      &::after{
+        content: "";
+        background: url(../images/svg/lion.svg) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: -16px;
+        right: 0px;
+        transform:translateX(50%);
+        -webkit-transform: translateX(50%);
+      
+      }
+    }
+    //ロゴに込めた想い　リスアイコン
+    &.squirrel{
+      &::before {
+        @include sp {
+          top: 19px;
+        }
+      
+      }
+      &::after{
+        content: "";
+        background: url(../images/svg/squirrel.svg) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: -16px;
+        right: -10px;
+        transform:translateX(50%);
+        -webkit-transform: translateX(50%);
+        @include sp {
+          top: 19px;
+        }
+      
+      }
+    }
+    //施設案内　くまアイコン
+    &.bear{
+      &::after{
+        content: "";
+        background: url(../images/svg/bear.svg) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: -16px;
+        right: 0px;
+        transform:translateX(50%);
+        -webkit-transform: translateX(50%);
+       
+      }
+    }
+}
+.explanation{
+  &.rabbit{
+    &::before {
+      @include sp {
+        top: 42px;
+      }
+    }
+    &::after{
+      content: "";
+      background: url(../images/svg/rabbit.svg) no-repeat center;
+      background-size: contain;
+      position: absolute;
+      top: -16px;
+      right: 0;
+      transform:translateX(50%);
+      -webkit-transform: translateX(50%);
+      @include sp {
+        top: 42px;
+      }
+    }
+  }
+}
+h2{
+  font-size: 2.4rem;
+  line-height: 1.5em;
+  @extend .Rounded-extrabold;
+  @include md {
+		font-size: 2.0rem;
+	}
+  &.title{
+    text-align: center;
+    padding: 22px 100px 16px;
+    border-bottom: 2px solid #B5D1E0;
+    @include md {
+      padding: 16px 56px 8px;
+    }
+  }
+}
+h3{
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  @extend .Rounded-bold;
+  @include md {
+    font-size: 1.4rem;
+  }
+  &.medium{
+    @extend .Rounded-medium;
+  }
+  &.extrabold{
+    @extend .Rounded-extrabold;
+  }
+}
+.bold {
+  font-weight: bold;
+}
+/*----------- レイアウト.整列 ------------*/ 
+// flexの中央寄せ
+.flex-center{
+  @include flex(center,center);
+}
+// flexの左寄せ
+.flex-left{
+  @include flex(start,start,wrap);
+}
+// flexの右寄せ
+.flex-right{
+  @include flex(end,end);
+}
+//flex
+.flexcolumn {
+  @include flex(between);
+  &.reverse{
+    flex-direction: row-reverse;
+  }
+}
+.flexitem{
+  @include flex(between,center,wrap);
+}
+
+/*--------------画像窓枠------------------*/
+.window-frame{
+  max-width: 248px;
+  width: 100%;
+  height: 325px;
+  border-radius: 214px 214px 0 0;
+  object-fit: cover;
+  @include lg {
+    max-width: 316px;
+    height: 375px;
+  }
+  @include md {
+    max-width: 248px;
+    height: 325px;
+  }
+}
+
+/*---------------メニューリスト装飾--------------------*/
+.menulist {
+  a {
+      font-size: 1.6rem;
+      line-height: 1.5;
+  }
+  li{
+    transition: 0.3s;
+    cursor:pointer;
+    &::before{
+      content: "";
+      background: url(../images/svg/arrow.svg) no-repeat center;
+      margin-right: 16px; 
+      vertical-align: -3px; 
+      width: 20px;
+      height: 18px;
+      display: inline-block;
+      transition: .3s;
+    }
+    &:hover::before {
+      margin-right: 8px; 
+      margin-left: 8px;
+    }
+  }
+  li + li{
+    margin-top: 16px;
+  }
+}
+
+.tell-banner {
+  margin: 0 auto;
+  width: 324px;
+  height: 67px;
+  background-color: $color3;
+  border-radius: 60px;
+  @include md {
+    width: 306px;
+    height: 66px;
+	}
+  .tell-num {
+    color: $color1;
+    line-height: 67px;
+    font-size: 2.4rem;
+    @extend .Rounded-extrabold;
+    @include md {
+      line-height: 66px;
+      font-size: 2.0rem;
+    }
+    &::before{
+      content: "";
+      background: url(../images/svg/tell-icon.svg) no-repeat center;
+      display: inline-block;
+      background-size: contain;
+      vertical-align: -3px; 
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      @include md {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      vertical-align: -4px; 
+      }
+  }
+}
+}
+//パンくず
+.breadcrumb-list{
+  max-width: 1440px;
+  width: 100%;
+  padding: 16px 16px 0 16px;
+  margin: 0 auto;
+  @include flex(end,center);
+  li{
+    max-width: max-content;
+    @include flex(center,center);
+    a{
+      span{
+        margin: 0 8px;
+      }
+    }
+  }
+}

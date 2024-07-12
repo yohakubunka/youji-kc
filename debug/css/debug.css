@@ -1,0 +1,180 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+#wpadminbar {
+  display: none;
+}
+
+#configData {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 100%;
+  background-color: rgba(46, 46, 46, 0.23);
+  z-index: 200;
+  font-size: 14px;
+  font-size: 14px;
+}
+
+#configData h2 {
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+
+#configData .dataContain {
+  max-width: 95vw;
+  min-height: 100vh;
+  margin: auto;
+  background-color: #fff;
+  padding: 50px;
+}
+
+#configData .dataContain .dataFlex {
+  display: flex;
+}
+
+#configData .dataContain .dataFlex .DataSideNav {
+  max-width: 270px;
+}
+
+#configData .dataContain .dataFlex .DataSideNav ul li {
+  font-family: 'Major Mono Display', monospace;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: 900;
+  padding-left: 0.5em;
+  margin-bottom: 0.35em;
+  transition: 0.4s;
+  border-left: 2px solid rgba(255, 255, 255, 0);
+}
+
+#configData .dataContain .dataFlex .DataSideNav ul li.active {
+  border-left: 2px solid #333;
+}
+
+#configData .dataContain .dataFlex .DataMain {
+  padding: 0 50px;
+}
+
+#configData .dataContain .dataFlex .DataMain .Dataclild {
+  display: none;
+}
+
+#configData .dataContain .dataFlex .DataMain .Dataclild.active {
+  display: block;
+}
+
+.dataLinkCheck .selectLinkType {
+  margin-bottom: 30px;
+}
+
+.dataLinkCheck .selectLinkType input {
+  margin-right: 0.35em;
+}
+
+.dataLinkCheck .links {
+  margin-bottom: 50px;
+}
+
+.dataLinkCheck .links li {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.dataLinkCheck .links li.notSetLink {
+  color: #333;
+}
+
+.dataLinkCheck .links li.interLink {
+  color: #1B5E20;
+}
+
+.dataLinkCheck .links li.exterLink {
+  color: #E65100;
+}
+
+.dataLinkCheck .links li.notSetBlank {
+  color: #B71C1C;
+}
+
+.dataLinkCheck .links li:nth-child(2n) {
+  margin-bottom: 1em;
+}
+
+.dataLinkCheck .links li:nth-child(2n).notSetLink:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f57f";
+  font-weight: solid;
+  margin-left: 1em;
+}
+
+.dataLinkCheck .links li:nth-child(2n).dangerLink:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f06a  targetに_blankが設定されていません";
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+.dataLinkCheck .pdfs li {
+  font-family: 'Cutive Mono', monospace;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.dataLinkCheck .pdfs li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+  width: 19px;
+  height: 19px;
+  color: #fff;
+  background-color: #E65100;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.dataLinkCheck .pdfs li.oneFile {
+  display: none;
+}
+
+.seoCheck .googleResult {
+  margin-bottom: 50px;
+}
+
+.seoCheck .googleResult * {
+  font-family: arial,sans-serif;
+}
+
+.seoCheck .googleResult .url .hed, .seoCheck .googleResult .url .trl {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #202124;
+}
+
+.seoCheck .googleResult .url .trl {
+  color: #70757a;
+}
+
+.seoCheck .googleResult .title {
+  font-size: 20px;
+  line-height: 1.3;
+  color: #1a0dab;
+  font-weight: normal;
+}
+
+.seoCheck .googleResult .description {
+  font-size: 14px;
+  line-height: 1.58;
+  color: #4d5156;
+}
+
+.seoCheck .metasTable tbody td {
+  border: solid 1px #333;
+  padding: 10px;
+  padding-right: 25px;
+}

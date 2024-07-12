@@ -1,0 +1,373 @@
+header{
+top: 0;
+max-width: 100%;
+width: 100%;
+@include flex(center,center);
+height: 152px;
+background-color: $color1;
+box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.16);
+position: fixed;
+z-index: 999;
+transition: 0.3s;
+&.none{
+  top: -152px;
+}
+@include md {
+  height: 88px;
+}
+  .header{
+    width: 100%;
+      .header__inner{
+        margin: 0 auto;
+        max-width: 100%;
+        width: 1680px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include xl {
+          padding: 0 64px;
+        }
+        @include md {
+          padding: 0 16px;
+        }
+        &--left {
+          .header-logo {
+            img {
+              @include md {
+                width: 173px;
+              }
+            }
+          }
+        }
+        &--right{
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          .tel{
+            background-color: $color3;
+            width: 376px;
+            height: 96px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include xl {
+              display: none;
+            }
+            p{
+              width: 100%;
+              text-align: center;
+              color: $color1;
+              font-size: 1.4rem;
+            }
+            .tell-num{
+              font-size: 3.2rem;
+              @extend .Rounded-extrabold;
+              &::before{
+                content: "";
+                background: url(../images/svg/tell-icon.svg) no-repeat center;
+                display: inline-block;
+                background-size: contain;
+                vertical-align: -8px; 
+                width: 40px;
+                height: 40px;
+                margin-right: 16px;
+              }
+            }
+          }
+          .sns{
+            margin-left: 24px;
+            transition: 0.3s;
+            &:hover {
+              opacity: 0.6;
+            }
+              @include md {
+                display: none;
+              }
+             
+          }
+          .menu{
+            z-index: 999;
+            &__btn{
+              position: relative;
+              margin-left: 24px;
+              width: 56px;
+              height: 56px;
+              cursor: pointer;
+              border: 3px solid $color3;
+              border-radius: 8px;
+              span{
+                display: inline-block;
+                transition: all .4s;
+                position: absolute;
+                left: 10px;
+                height: 3px;
+                border-radius: 3px;
+                background: $color3;
+                width: 31px;
+                &:nth-of-type(1) {
+                  top:9px; 
+                  }
+                &:nth-of-type(2) {
+                  top:18px;
+                  }
+                &:nth-of-type(3) {
+                  top:27px;
+                  }
+              }
+              p{
+                position: absolute;
+                font-size: 9px;
+                @extend .Rounded-extrabold;
+                color: $color3;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                transition: all .4s;
+              }
+            }
+            &.open .menu__btn span:nth-of-type(1) {
+              top: 18px;
+              left: 10px;
+              transform: translateY(6px) rotate(-45deg);
+              width: 30px;
+            }
+            &.open .menu__btn span:nth-of-type(2) {
+              opacity: 0;
+              }
+            &.open .menu__btn span:nth-of-type(3){
+              top: 30px;
+              left: 10px;
+              transform: translateY(-6px) rotate(45deg);
+              width: 30px;
+            }
+            &.open .menu__btn p{
+             opacity: 0;
+            }
+          }
+        }
+         //ハンバーガーメニュー　展開
+        .inside{
+          background-color: $color1;
+          display: none;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          z-index: -1;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          transition: all 0.3s linear;
+          &__inner{
+            // メニュー
+            @include flex(center,center,0,0,1);
+            width: 100%;
+            height: 100vh;
+            @include md {
+              padding: 0 64px;
+            }
+            @include sp {
+              padding: 0 32px;
+            }
+            @include xs {
+              padding: 0 16px;
+            }
+            &--logo{
+              max-width: 604px;
+              width: 100%;
+              margin: 0 auto;
+              text-align: center;
+              margin-bottom: 64px;
+              @include md {
+                margin-bottom: 32px;
+              }
+              img{
+                width: 100%;
+              }
+            }
+            &--list{
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              max-width: 604px;
+              width: 100%;
+              margin: 0 auto;
+              margin-bottom: 64px;
+              @include md {
+                margin-bottom: 32px;
+              }
+              ul {
+                width: 50%;
+              }
+            }
+            &--contact{
+              text-align: center;
+             .tell-banner {
+              margin-bottom: 16px;
+             }
+          }
+        }
+      }
+        &.open .inside{
+         display: block;
+         opacity: 1;
+          z-index: 990;
+        }
+      }
+  }
+}
+
+.mainvisual{
+  padding: 152px 120px 0 120px; 
+  @include md{
+    padding: 88px 48px 0 48px; 
+  }
+  &__inner{
+    max-width: 1680px;
+    width: 100%;
+    margin: 0 auto;
+    &--slide{
+      max-width: 1680px;
+      width: 100%;
+      
+      position: relative;
+      .slide-pc{
+        @include sm{
+            display: none;
+        }
+        .mv-slide{
+          width: 100%;
+          height: 749px;
+          overflow: hidden;
+            .slide-img{
+                img{
+                  width: 100%;
+                  height: 749px;
+                  object-fit: cover;
+                }
+            }
+            .slick-dots{
+                bottom: 24px;
+                width: fit-content;
+                right: 136px;
+                @include sm{
+                    bottom: 24px;
+                }
+                li{
+                    margin: 0 8px;
+                    button{
+                        &::before{
+                            width: 16px;
+                            height: 16px;
+                            color: #efefef;
+                            opacity: 1;
+                            font-size: 1.6rem;
+                        }
+                    }
+                    &.slick-active{
+                        button{
+                            &::before{
+                                opacity: 1;
+                                color: $color3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .slide-sp{
+        display: none;
+        @include sm{
+            display: block;
+        }
+        .mv-slide{
+            opacity: 0;
+            transition: opacity .3s linear;
+            &.slick-initialized{
+                opacity: 1;
+            }
+            .slide-img{
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: rgba(38,51,59,.1);
+                    opacity: .16;
+                    display: block;
+                }
+                img{
+                  width: 100%;
+                  height: 474px;
+                  object-fit: cover;
+                }
+            }
+            .slick-dots{
+              width: 100%;
+                bottom: 16px;
+               left: 50%;
+               transform: translateX(-50%);
+               -webkit-transform: translateX(-50%);
+                li{
+                    margin: 0 8px;
+                    button{
+                        &::before{
+                            width: 8px;
+                            height: 8px;
+                            color: #efefef;
+                            opacity: 1;
+                            font-size: 0.8rem;
+                        }
+                    }
+                    &.slick-active{
+                        button{
+                            &::before{
+                                opacity: 1;
+                                color: $color3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .scroll{
+      position: absolute;
+      left: -55px;
+      bottom: 0;
+      text-align: center;
+      @include sm{
+        left: -24px;
+      }
+      p{
+        writing-mode: vertical-rl;
+        @extend .Rounded-bold;
+        color: $color3;
+        font-size: 18px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+}
+.catch-copy{
+  margin-top: 56px;
+  width: 100%;
+  h1{
+    white-space: nowrap;
+    font-size: 3.2rem;
+    line-height: 1.5;
+    @extend .Rounded-medium;
+    color: $color2;
+    text-align: center;
+    span{
+      color: $color3;
+    }
+    @include md{
+      font-size: 2.4rem;
+    }
+  }
+}
